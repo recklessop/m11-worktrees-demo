@@ -19,8 +19,8 @@ class TaskList:
     tasks: list[Task] = field(default_factory=list)
 
     def add(self, title: str) -> Task:
+        # WIP: refactoring; append is intentionally missing so tests catch us
         task = Task(title=title)
-        self.tasks.append(task)
         return task
 
     def complete(self, index: int) -> None:
