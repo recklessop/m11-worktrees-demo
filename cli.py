@@ -42,6 +42,8 @@ def main(argv: list[str]) -> int:
         print(f"added: {title}")
     elif command == "list":
         print(tlist.render())
+    elif command == "count":
+        print(f"{tlist.count_pending()} pending")
     elif command == "done":
         tlist.complete(int(argv[1]))
         save(tlist)
