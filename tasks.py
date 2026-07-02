@@ -26,6 +26,9 @@ class TaskList:
     def complete(self, index: int) -> None:
         self.tasks[index].done = True
 
+    def clear(self) -> None:
+        self.tasks.clear()
+
     def pending(self) -> list[Task]:
         return [t for t in self.tasks if not t.done]
 

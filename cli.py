@@ -42,6 +42,10 @@ def main(argv: list[str]) -> int:
         print(f"added: {title}")
     elif command == "list":
         print(tlist.render())
+    elif command == "clear":
+        tlist.clear()
+        save(tlist)
+        print("cleared")
     elif command == "done":
         tlist.complete(int(argv[1]))
         save(tlist)
