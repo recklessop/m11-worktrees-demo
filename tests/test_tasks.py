@@ -14,3 +14,8 @@ class TaskListTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class CountTests(unittest.TestCase):
+    def test_count_pending_excludes_done(self):
+        tl = TaskList([Task("a"), Task("b", done=True), Task("c")])
+        self.assertEqual(tl.count_pending(), 2)
